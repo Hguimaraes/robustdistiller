@@ -19,7 +19,7 @@ This repository contain codes and artifacts are from two papers:
 > We propose a novel knowledge distillation mechanism, namely RobustDistiller, to tackle both problems jointly. 
 Two main modifications are proposed to improve the robustness of the student models: (i) a **feature-denoising knowledge distillation** step that induces the student model to learn noise-invariant representations; and (ii) a **multi-task learning approach via a signal enhancement** step where, given the last hidden state from the student model obtained from a noisy signal, we reconstruct the clean waveform or STFT of the clean input.
 
-![alt text](./assets/robustdistiller.png "RobustDistiller")
+![alt text](https://github.com/Hguimaraes/robustdistiller/blob/main/assets/model_arch.png)
 
 Initially, in the ICASSP paper, we only evaluated RobustDistiller on 3 downstream tasks. Later, on a journal extension, we evaluate it over 12 downstream tasks and has been shown to outperform several benchmarks regardless of noise type, noise level, and reverberation times. 
 
