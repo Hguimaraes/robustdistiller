@@ -6,7 +6,7 @@
 
 # Overview
 
-This repository contain codes and artifacts are from two papers:
+This repository contains codes and artifacts from two papers:
 
 1. [ICASSP 2023] RobustDistiller: Compressing Universal Speech Representations for Enhanced Environment Robustness
 
@@ -21,19 +21,51 @@ Two main modifications are proposed to improve the robustness of the student mod
 
 ![alt text](https://github.com/Hguimaraes/robustdistiller/blob/main/assets/model_arch.png)
 
-Initially, in the ICASSP paper, we only evaluated RobustDistiller on 3 downstream tasks. Later, on a journal extension, we evaluate it over 12 downstream tasks and has been shown to outperform several benchmarks regardless of noise type, noise level, and reverberation times. 
+Initially, in the ICASSP paper, we only evaluated RobustDistiller on 3 downstream tasks. Later, on a journal extension, we evaluated it over 12 downstream tasks, and it has been shown to outperform several benchmarks regardless of noise type, noise level, and reverberation times. 
 
 Lastly, we show that our recipe is general enough to adapt straightforwardly to other distillation methodologies, such as the recent **DPWavLM**.
 
 # Usage
 
-
 ## Training the upstream model
 
+The first step here is to download the data to train the model. Herein, we rely on different datasets:
+
+1. LibriSpeech (960h) [[Link](https://www.openslr.org/12)]
+2. Musan [[Link](https://www.openslr.org/17/)]
+3. UrbanSound8K [[Link](https://urbansounddataset.weebly.com/urbansound8k.html)]
+4. impulse_responses_000 from DNS4 [[Link](https://dns4public.blob.core.windows.net/dns4archive/datasets_fullband/datasets_fullband.impulse_responses_000.tar.bz2)]
+
+The rest of the process is quite similar to training the DistilHuBERT model from S3PRL. We first generate the librispeech metadata as:
+
+```bash
+python preprocess/generate_len_for_bucket.py -i $SLURM_TMPDIR/LibriSpeech/
+```
+
+Edit the file *config_runner.yaml* from the pretrain/robust_distiller folder. There are several variables that you can experiment with, but to change the file paths, these are the most important for you:
+
+- **libri_root**: /path/to/your/librispeech/folder
+- **file_path**: $S3PRL_DIR/s3prl/data/len_for_bucket
+- **urbansound_root**: /path/to/your/urbansound/folder
+- **musan_root**: /path/to/your/musan/folder
+- **reverb_root**: /path/to/your/impulse_responses_000/folder
+
+Lastly, to run the pretrain:
+
+```bash
+python run_pretrain.py -u robust_distiller -g pretrain/robust_distiller/config_model.yaml -n rd_wavlm
+```
 
 ## Downstream tasks
 
-More details on training for specific downstream tasks can be found [here](https://github.com/s3prl/s3prl/blob/main/s3prl/downstream/docs/superb.md).
+This is an example of how to train the speaker diarization (SD) downstream task.
+To prepare the dataset and understand more about the task, please look for more specific details [here](https://github.com/s3prl/s3prl/blob/main/s3prl/downstream/docs/superb.md).
+
+The difference here is that you need to point to where your ckpt file is saved, as in the example:
+
+```bash
+python run_downstream.py -n rd_wavlm_cl_sd  -m train -u robust_distiller_local -d diarization -k $S3PRL_DIR/s3prl/result/pretrain/rd_wavlm_cl/states-epoch-17.ckpt
+```
 
 # Pretrained Models
 
