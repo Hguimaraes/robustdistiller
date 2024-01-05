@@ -41,7 +41,6 @@ The rest of the process is quite similar to training the DistilHuBERT model from
 ```bash
 python preprocess/generate_len_for_bucket.py -i $SLURM_TMPDIR/LibriSpeech/
 ```
-
 Edit the file *config_runner.yaml* from the pretrain/robust_distiller folder. There are several variables that you can experiment with, but to change the file paths, these are the most important for you:
 
 - **libri_root**: /path/to/your/librispeech/folder
@@ -49,6 +48,8 @@ Edit the file *config_runner.yaml* from the pretrain/robust_distiller folder. Th
 - **urbansound_root**: /path/to/your/urbansound/folder
 - **musan_root**: /path/to/your/musan/folder
 - **reverb_root**: /path/to/your/impulse_responses_000/folder
+
+You can edit specific details of the model (e.g., which Teacher, use the enhancement head or not, etc.) in the *config_model.yaml* file.
 
 Lastly, to run the pretrain:
 
