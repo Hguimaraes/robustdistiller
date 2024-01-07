@@ -75,9 +75,9 @@ In the Hugging Face repository ([Link](https://huggingface.co/Hguimaraes/robustd
 
 | Base recipe | Teacher | Name on our paper | Link |
 |-------------|---------|-------------------|------|
-| DistilHuBERT | HuBERT | RD (HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller) |
-| DistilHuBERT | WavLM | RD (WavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller) |
-| DistilHuBERT | Robust HuBERT | RD (Robust HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller) |
+| DistilHuBERT | HuBERT | RD (HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_hubert.ckpt) |
+| DistilHuBERT | WavLM | RD (WavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_wavlm.ckpt) |
+| DistilHuBERT | Robust HuBERT | RD (Robust HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_rhubert.ckpt) |
 | DPHuBERT | WavLM | RD (DPWavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller) |
 
 # Citation
