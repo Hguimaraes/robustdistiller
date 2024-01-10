@@ -62,14 +62,15 @@ python run_pretrain.py -u robust_distiller -g pretrain/robust_distiller/config_m
 This is an example of how to train the speaker diarization (SD) downstream task.
 To prepare the dataset and understand more about the task, please look for more specific details [here](https://github.com/s3prl/s3prl/blob/main/s3prl/downstream/docs/superb.md).
 
+If you want to use the DPWavLM model trained with the RobustDistiller recipe, check their original repository on how to integrate with SUPERB [here](https://github.com/pyf98/DPHuBERT).
+
 The difference here is that you need to point to where your ckpt file is saved, as in the example:
 
 ```bash
-python run_downstream.py -n rd_wavlm_cl_sd  -m train -u robust_distiller_local -d diarization -k $S3PRL_DIR/s3prl/result/pretrain/rd_wavlm_cl/states-epoch-17.ckpt
+python run_downstream.py -n rd_wavlm_sd  -m train -u robust_distiller_local -d diarization -k $S3PRL_DIR/s3prl/result/pretrain/rd_wavlm/states-epoch-17.ckpt
 ```
 
 # Pretrained Models
-
 
 In the Hugging Face repository ([Link](https://huggingface.co/Hguimaraes/robustdistiller)), we provide the pretrained weights to the following robust models:
 
