@@ -78,7 +78,7 @@ In the Hugging Face repository ([Link](https://huggingface.co/Hguimaraes/robustd
 | DistilHuBERT | HuBERT | RD (HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_hubert.ckpt) |
 | DistilHuBERT | WavLM | RD (WavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_wavlm.ckpt) |
 | DistilHuBERT | Robust HuBERT | RD (Robust HuBERT) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/rd_rhubert.ckpt) |
-| DPHuBERT | WavLM | RD (DPWavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller) |
+| DPHuBERT | WavLM | RD (DPWavLM) | [CKPT](https://huggingface.co/Hguimaraes/robustdistiller/blob/main/RDDPWavLM-sp0.75.pth) |
 
 # Citation
 ```latex
