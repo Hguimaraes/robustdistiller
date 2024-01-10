@@ -36,7 +36,7 @@ The first step here is to download the data to train the model. Herein, we rely 
 3. UrbanSound8K [[Link](https://urbansounddataset.weebly.com/urbansound8k.html)]
 4. impulse_responses_000 from DNS4 [[Link](https://dns4public.blob.core.windows.net/dns4archive/datasets_fullband/datasets_fullband.impulse_responses_000.tar.bz2)]
 
-The rest of the process is quite similar to training the DistilHuBERT model from S3PRL. We first generate the librispeech metadata as:
+The rest of the process is quite similar to training the DistilHuBERT model from S3PRL, and most of our code is adapted from there. We first generate the librispeech metadata as:
 
 ```bash
 python preprocess/generate_len_for_bucket.py -i $SLURM_TMPDIR/LibriSpeech/
