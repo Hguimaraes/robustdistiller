@@ -10,7 +10,7 @@ This repository contains codes and artifacts from two papers:
 
 1. [ICASSP 2023] RobustDistiller: Compressing Universal Speech Representations for Enhanced Environment Robustness
 
-2. [Arxiv / Journal extension - Under Review] An Efficient End-to-End Approach to Noise Invariant Speech Features via Multi-Task Learning
+2. [Arxiv] An Efficient End-to-End Approach to Noise Invariant Speech Features via Multi-Task Learning
 
 **Problem statement**: Self-supervised speech representation learning enables the extraction of meaningful factors from raw waveforms. These features can then be efficiently used across multiple downstream tasks. However, two significant issues arise when considering the deployment of such methods ``in-the-wild": (i) Their large size, which can be prohibitive for edge applications; and (ii) their robustness to detrimental factors, such as noise and/or reverberation, that can heavily degrade the performance of such systems.
 
